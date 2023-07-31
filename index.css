@@ -56,8 +56,11 @@ body {
 }
 
 .dark #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover {
+    outline: 8px solid red;
 }
 
 #switch button {
@@ -71,6 +74,7 @@ body {
     z-index: 1;
     top: 50%;
     left: 0;
+    animation: slide-back 0.2s forwards;
     transform: translateY(-50%);
 }
 
@@ -144,4 +148,22 @@ footer {
     padding: 24px;
     text-align: center;
     font-size: 14px;
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from{
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
 }
